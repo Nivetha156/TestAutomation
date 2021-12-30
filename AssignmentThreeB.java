@@ -25,6 +25,9 @@ public class AssignmentThreeB {
 		System.out.println("Header text: "+ HeaderText);
 		String SubText = driver.findElement(By.xpath("//p[@class='desc']")).getText();
 		System.out.println("Sub text: "+ SubText);
+		
+		Assert.assertEquals(HeaderText, "Share your location with Naukri.com for more relevant jobs", "Failed");
+		Assert.assertEquals(SubText, "You can turn them off anytime from browser settings", "Failed");
 				
 		//Click Sure
 		/*
