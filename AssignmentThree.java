@@ -46,6 +46,7 @@ public class AssignmentThree {
 		Alert alert = driver.switchTo().alert();
 		String alertText = alert.getText();
 		System.out.println(alertText);
+		assertEquals(alertText,"Please, ensure that you have filled all the required fields with valid values.","Failed");
 		alert.accept();
 		
 		WebElement clickDropDown = driver.findElement(By.xpath("(//a[@class='dropdown-toggle'])[2]"));
