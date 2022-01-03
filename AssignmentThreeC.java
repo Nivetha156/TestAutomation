@@ -3,6 +3,7 @@ package SeleniumBasics;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -19,7 +20,7 @@ public class AssignmentThreeC {
 		driver.get("https://www.naukri.com/");
 		driver.manage().window().maximize();
 						
-		Thread.sleep(10000);
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		
 		System.out.println("---Windows Handling---");
 		WebElement clickGotIt = driver.findElement(By.xpath("//button[text()='GOT IT']"));
@@ -28,7 +29,7 @@ public class AssignmentThreeC {
 		String handleOne = driver.getWindowHandle();
 		System.out.println("Current window "+ handleOne);
 		
-		Thread.sleep(3000);
+		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 		
 		WebElement clickCognizant = driver.findElement(By.xpath("//img[contains(@src, '/cognizant-hs-tp-21sep2018.gif') ]"));
 		clickCognizant.click();
@@ -38,7 +39,7 @@ public class AssignmentThreeC {
 		
 		driver.switchTo().window(allHandlesList.get(1));
 		System.out.println("Title of New window "+ driver.getTitle());
-		Thread.sleep(2000);
+		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 		driver.switchTo().defaultContent();
 		
 		driver.close();
