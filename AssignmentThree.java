@@ -1,5 +1,6 @@
 package SeleniumBasics;
 
+import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -38,10 +39,10 @@ public class AssignmentThree {
 		WebElement clickPFC = driver.findElement(By.partialLinkText("Foreign Currency"));
 		clickPFC.click();
 		
-		Thread.sleep(2000);
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		WebElement clickPurchase = driver.findElement(By.id("purchase_cash"));
 		clickPurchase.click();
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		
 		Alert alert = driver.switchTo().alert();
 		String alertText = alert.getText();
