@@ -1,9 +1,11 @@
 package SeleniumBasics;
 
+import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+
 
 public class AssignmentTwo {
 
@@ -51,7 +53,7 @@ public class AssignmentTwo {
 		WebElement clickNewPayee = driver.findElement(By.partialLinkText("New Payee"));
 		clickNewPayee.click();
 		
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		
 		//Enter Payee details
 		WebElement payeeName = driver.findElement(By.cssSelector("input#np_new_payee_name"));
