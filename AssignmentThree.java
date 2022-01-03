@@ -39,10 +39,10 @@ public class AssignmentThree {
 		WebElement clickPFC = driver.findElement(By.partialLinkText("Foreign Currency"));
 		clickPFC.click();
 		
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 		WebElement clickPurchase = driver.findElement(By.id("purchase_cash"));
 		clickPurchase.click();
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
 		
 		Alert alert = driver.switchTo().alert();
 		String alertText = alert.getText();
