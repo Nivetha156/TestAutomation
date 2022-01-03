@@ -53,7 +53,7 @@ public class AssignmentTwo {
 		WebElement clickNewPayee = driver.findElement(By.partialLinkText("New Payee"));
 		clickNewPayee.click();
 		
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
 		
 		//Enter Payee details
 		WebElement payeeName = driver.findElement(By.cssSelector("input#np_new_payee_name"));
