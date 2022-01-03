@@ -1,5 +1,6 @@
 package SeleniumBasics;
 
+import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -15,12 +16,12 @@ public class AssignmentThreeB {
 		driver.get("https://www.naukri.com/");
 		driver.manage().window().maximize();
 				
-		Thread.sleep(10000);
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		
 		System.out.println("Confirm Popup");
 		WebElement clickGotIt = driver.findElement(By.xpath("//button[text()='GOT IT']"));
 		clickGotIt.click();
-		Thread.sleep(7000);
+		driver.manage().timeouts().implicitlyWait(7, TimeUnit.SECONDS);
 		String HeaderText = driver.findElement(By.xpath("//p[@class='caption']")).getText();
 		System.out.println("Header text: "+ HeaderText);
 		String SubText = driver.findElement(By.xpath("//p[@class='desc']")).getText();
@@ -33,14 +34,14 @@ public class AssignmentThreeB {
 		/*
 		WebElement clickSure = driver.findElement(By.xpath("//span[contains(text(), 'Sure')]"));
 		clickSure.click();
-		Thread.sleep(2000);
+		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 		System.out.println("I Clicked Sure");
 		*/
 				
 		//Click Later
 		WebElement clickLater = driver.findElement(By.xpath("//span[contains(text(), 'Later')]"));
 		clickLater.click();
-		Thread.sleep(2000);
+		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 		System.out.println("I Clicked Later");
 						
 		driver.close();
